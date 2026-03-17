@@ -1,15 +1,25 @@
-const express = require("express")
-const router = express.Router()
+const express = require("express");
+const router = express.Router();
 
 router.get("/", (req, res) => {
-    res.render('index')
-})
+  res.render("index");
+});
 
-router.get("/sobre/{:id}", (req, res) => {
+router.get("/sobre", (req, res) => {
+  res.render("sobre");
+});
 
-    const id = req.params.id
-    
-    res.render("sobre", { id })
-})
+router.get("/sobre/:id", (req, res) => {
+  const id = req.params.id;
+  res.render("sobre", { id });
+});
 
-module.exports = router
+router.get("/contato", (req, res) => {
+  res.render("contato");
+});
+
+router.get("/servicos", (req, res) => {
+  res.render("servicos");
+});
+
+module.exports = router;
